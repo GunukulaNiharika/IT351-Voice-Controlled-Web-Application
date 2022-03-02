@@ -21,6 +21,7 @@ const ProductListPage = (props) => {
         content = <ProductStore {...props} />;
         break;
       case "Page":
+
         content = <ProductPage {...props} />;
         break;
       default:

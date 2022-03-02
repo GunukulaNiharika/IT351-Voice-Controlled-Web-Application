@@ -40,7 +40,7 @@
 }
 .breed ul{
     padding: 0;
-    margin: 0;
+    margin: 0 50px;
     display: flex;
     align-items: center;
 }
@@ -59,7 +59,7 @@
     margin: 0 10px;
 }
 .productDetails{
-    margin: 0 10px;
+    margin: 0 50px;
 }
 .productDetails .productTitle{
     font-size: 18px;

@@ -13,7 +13,7 @@ import { generatePublicUrl } from '../../../helpers/baseURL';
 **/
 
 const ProductPage = (props) => {
-
+    console.log("hii");
     const dispatch = useDispatch();
     const product = useSelector(state => state.product);
     const { page } = product;

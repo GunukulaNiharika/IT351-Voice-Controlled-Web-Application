@@ -44,6 +44,7 @@ module.exports.signin_post = async (req,res) =>{
                 }]
               })
         }
+        else if(user.role === 'user'){
         const payload = {
             user: {
               id: user.id,
@@ -59,6 +60,14 @@ module.exports.signin_post = async (req,res) =>{
                 user: { _id, firstName, lastName, username, email, avatar, fullName }
             });
         });
+    }
+    else{
+        return res.status(400).json({
+            errors: [{
+              message: 'Your are not a registered User'
+            }]
+          })
+       }
     }
     catch(error){
         console.log(error.message);

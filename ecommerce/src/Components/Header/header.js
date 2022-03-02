@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import flipkartLogo from "../../images/logo/flipkart.png";
-import goldenStar from "../../images/logo/golden-star.png";
+// import flipkartLogo from "../../images/logo/flipkart.png";
+// import goldenStar from "../../images/logo/golden-star.png";
 import { IoIosArrowDown, IoIosCart, IoIosSearch } from "react-icons/io";
 import {
   Modal,
   MaterialInput,
   MaterialButton,
   DropdownMenu,
-} from "../MaterialUI";
+} from "../MaterialUI/MaterialUI"
 import { useDispatch, useSelector } from "react-redux";
-import { login, signout, getCartItems, signup as _signup } from "../../actions";
+import { login, signout,
+  // getCartItems 
+} from "../../actions/auth_actions";
+import { register as _signup } from "../../actions/user_actions";
 import Cart from "../UI/Cart";
 
 /**
@@ -211,12 +214,12 @@ const Header = (props) => {
         {/* Logo  */}
         <div className="logo">
           <a href="">
-            <img src={flipkartLogo} className="logoimage" alt="" />
+            {/* <img src={flipkartLogo} className="logoimage" alt="" /> */}
           </a>
           <a style={{ marginTop: "-10px" }}>
             <span className="exploreText">Explore</span>
             <span className="plusText">Plus</span>
-            <img src={goldenStar} className="goldenStar" alt="" />
+            {/* <img src={goldenStar} className="goldenStar" alt="" /> */}
           </a>
         </div>
         {/* logo ends here */}
@@ -262,10 +265,10 @@ const Header = (props) => {
             ]}
           />
           <div>
-            <a href={`/cart`} className="cart">
+            {/* <a href={`/cart`} className="cart">
               <Cart count={Object.keys(cart.cartItems).length} />
               <span style={{ margin: "0 10px" }}>Cart</span>
-            </a>
+            </a> */}
           </div>
         </div>
         {/* right side menu ends here */}

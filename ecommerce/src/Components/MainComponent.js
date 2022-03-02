@@ -30,10 +30,7 @@ function Main(){
                 <PrivateRoute path="/" exact component={Home}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register}/>
-                <Route
-                path="/:productSlug/:productId/p"
-                component={ProductDetailsPage}
-                />
+                <Route path="/:productSlug/:productId/p" component={ProductDetailsPage}/>
                 <Route path="/:slug" component={ProductListPage} />
             </Switch>
         </>

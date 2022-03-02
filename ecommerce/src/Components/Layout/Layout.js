@@ -7,6 +7,7 @@ import HeaderComponent from '../../Components/HeaderComponent';
 import './layout.css'
 import { NavLink } from 'react-router-dom';
 import MenuHeader from '../MenuHeader/header';
+import Header from '../Header/header';
 /**
 * @author
 * @function Layout
@@ -24,7 +25,8 @@ const Layout = (props) => {
   // }
   return(
     <>
-       <HeaderComponent/>
+       {/* <HeaderComponent/> */}
+       <Header/>
        <MenuHeader/>
        {props.children}
       

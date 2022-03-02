@@ -38,7 +38,7 @@ const ProductDetailsPage = (props) => {
     <Layout>
       {/* <div>{product.productDetails.name}</div> */}
       <div className="productDescriptionContainer">
-        <div className="flexRow">
+        <div className="d-flex flex-row">
           <div className="verticalImageStack">
             {product.productDetails.productPictures.map((thumb, index) => (
               <div key={index} className="thumbnail">
@@ -55,7 +55,7 @@ const ProductDetailsPage = (props) => {
             </div>
 
             {/* action buttons */}
-            <div className="flexRow">
+            <div className="d-flex flex-row">
               <MaterialButton
                 title="ADD TO CART"
                 bgColor="#ff9f00"
@@ -119,7 +119,7 @@ const ProductDetailsPage = (props) => {
               Extra <BiRupee />
               4500 off{" "}
             </div>
-            <div className="flexRow priceContainer">
+            <div className="d-flex flex-row priceContainer">
               <span className="price">
                 <BiRupee />
                 {product.productDetails.price}
