@@ -120,7 +120,7 @@
   height: 100%;
   color: #fff;
   letter-spacing: 1px;
-  background-image: url('../../images/login-image.png');
+  /* background-image: url('../../images/login-image.png'); */
   background-color: #875bd8;
   background-repeat: no-repeat;
   background-position: center 85%;
