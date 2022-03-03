@@ -216,8 +216,8 @@ const Header = (props) => {
             <img src={flipkartLogo} className="logoimage" alt="" />
           </a> */}
           <a style={{ marginTop: "-10px" }}>
-            {/* <span className="exploreText">Explore</span>
-            <span className="plusText">Plus</span> */}
+            <span className="exploreText">Shopify</span>
+            {/* <span className="plusText">Plus</span> */}
             {/* <img src={goldenStar} className="goldenStar" alt="" /> */}
           </a>
         </div>

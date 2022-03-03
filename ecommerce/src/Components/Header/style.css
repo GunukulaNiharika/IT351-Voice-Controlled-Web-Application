@@ -25,8 +25,9 @@
     width: 75px;
 }
 .exploreText{ 
-    font-size: 10px;
-    font-style: italic; 
+    font-size: 20px;
+    font-style: italic;
+    color: yellow; 
 }
 .plusText{ 
     font-size: 10px; 
