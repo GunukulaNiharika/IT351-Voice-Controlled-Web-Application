@@ -8,12 +8,11 @@ import {
   MaterialInput,
   MaterialButton,
   DropdownMenu,
-} from "../MaterialUI/MaterialUI"
+} from "../MaterialUI/MaterialUI";
 import { useDispatch, useSelector } from "react-redux";
-import { login, signout,
-  // getCartItems 
-} from "../../actions/auth_actions";
-import { register as _signup } from "../../actions/user_actions";
+import { login, signout} from "../../actions/auth_actions";
+import { getCartItems } from "../../actions/cart_actions";
+import {register as _signup} from "../../actions/user_actions"
 import Cart from "../UI/Cart";
 
 /**
@@ -78,7 +77,7 @@ const Header = (props) => {
         menus={[
           { label: "My Profile", href: "", icon: null },
           { label: "SuperCoin Zone", href: "", icon: null },
-          { label: "Flipkart Plus Zone", href: "", icon: null },
+          
           {
             label: "Orders",
             href: `/account/orders`,
@@ -112,7 +111,7 @@ const Header = (props) => {
         }
         menus={[
           { label: "My Profile", href: "", icon: null },
-          { label: "Flipkart Plus Zone", href: "", icon: null },
+          
           {
             label: "Orders",
             href: `/account/orders`,
@@ -213,12 +212,12 @@ const Header = (props) => {
       <div className="subHeader">
         {/* Logo  */}
         <div className="logo">
-          <a href="">
-            {/* <img src={flipkartLogo} className="logoimage" alt="" /> */}
-          </a>
+          {/* <a href="">
+            <img src={flipkartLogo} className="logoimage" alt="" />
+          </a> */}
           <a style={{ marginTop: "-10px" }}>
-            <span className="exploreText">Explore</span>
-            <span className="plusText">Plus</span>
+            {/* <span className="exploreText">Explore</span>
+            <span className="plusText">Plus</span> */}
             {/* <img src={goldenStar} className="goldenStar" alt="" /> */}
           </a>
         </div>
@@ -258,17 +257,17 @@ const Header = (props) => {
             }
             menus={[
               { label: "Notification Preference", href: "", icon: null },
-              { label: "Sell on flipkart", href: "", icon: null },
+             
               { label: "24x7 Customer Care", href: "", icon: null },
               { label: "Advertise", href: "", icon: null },
               { label: "Download App", href: "", icon: null },
             ]}
           />
           <div>
-            {/* <a href={`/cart`} className="cart">
+            <a href={`/cart`} className="cart">
               <Cart count={Object.keys(cart.cartItems).length} />
               <span style={{ margin: "0 10px" }}>Cart</span>
-            </a> */}
+            </a>
           </div>
         </div>
         {/* right side menu ends here */}

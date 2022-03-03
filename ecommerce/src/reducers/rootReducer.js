@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import authReducers from './authReducers';
 import userReducers from './userReducer';
+import cartReducer from './cartReducer';
 // // import orderReducers from './orderReducer';
 import productReducers from './productReducer';
 import categoryReducers from './categoryReducer';
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     user: userReducers,
     category: categoryReducers,
     product: productReducers,
+    cart: cartReducer
     // page: pageReducers
     // orders: orderReducers
 });

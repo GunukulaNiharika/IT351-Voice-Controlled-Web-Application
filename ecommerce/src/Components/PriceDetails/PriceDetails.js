@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../components/UI/Card";
+import Card from "../UI/Card/Card";
 
 /**
  * @author
@@ -8,7 +8,7 @@ import Card from "../../components/UI/Card";
 
 const PriceDetails = (props) => {
   return (
-    <Card headerLeft={"Price Details"} style={{ maxWidth: "380px" }}>
+    <Card headerleft={"Price Details"} style={{ maxWidth: "380px" }}>
       <div
         style={{
           padding: "20px",

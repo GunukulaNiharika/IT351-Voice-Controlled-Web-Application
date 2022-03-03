@@ -8,7 +8,7 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import { MaterialButton } from "../../Components/MaterialUI/MaterialUI";
 import "./ProductDetailsPage.css";
 import {generatePublicUrl} from '../../helpers/baseURL'
-// import { addToCart } from "../../actions";
+import { addToCart } from "../../actions/cart_actions";
 
 /**
  * @author
@@ -67,7 +67,7 @@ const ProductDetailsPage = (props) => {
                 onClick={() => {
                   const { _id, name, price } = product.productDetails;
                   const img = product.productDetails.productPictures[0].img;
-                  // dispatch(addToCart({ _id, name, price, img }));
+                  dispatch(addToCart({ _id, name, price, img }));
                   props.history.push(`/cart`);
                 }}
               />

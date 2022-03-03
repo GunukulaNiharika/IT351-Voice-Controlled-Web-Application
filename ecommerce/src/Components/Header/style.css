@@ -1,7 +1,7 @@
 .header{
     width: 100%;
     height: 56px;
-    background: #2874f0;
+    background: #875bd8;
 }
 .subHeader{
     max-width: 1100px;
@@ -76,7 +76,7 @@
     background: #fff;
     text-align: center;
     line-height: 30px;
-    color: #2874f0;
+    color: #875bd8;
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
@@ -121,7 +121,7 @@
   color: #fff;
   letter-spacing: 1px;
   background-image: url('../../images/login-image.png');
-  background-color: #2874f0;
+  background-color: #875bd8;
   background-repeat: no-repeat;
   background-position: center 85%;
   padding: 40px 33px;
