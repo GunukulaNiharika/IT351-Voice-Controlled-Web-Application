@@ -6,7 +6,8 @@ import {register} from './alanFunctions';
 import {useHistory} from 'react-router-dom';
 const COMMANDS = {
     REGISTER: 'register',
-    GetCategories: 'getAllCategories'
+    GetCategories: 'getAllCategories',
+    openproducts : 'openProducts'
 }
 
 const Alan = () =>{
@@ -21,16 +22,28 @@ const Alan = () =>{
         
         navigate.push('/sample');
     },[alanInstance])
+    const openLink = useCallback((url) =>{
+        // alanInstance.playText("Fetching MI");
+        const win = window.open(url, '_top');
+        if (win != null) {
+          win.focus();
+        }
+        
+    },[alanInstance])
 
     useEffect(()=> {
         window.addEventListener(COMMANDS.REGISTER,register)
         window.addEventListener(COMMANDS.GetCategories,GetallCategories);
+        window.addEventListener(COMMANDS.openproducts,function(evt){
+            openLink(evt.detail)
+        });
 
         return () =>{
             window.removeEventListener(COMMANDS.REGISTER,register)
             window.removeEventListener(COMMANDS.GetCategories,GetallCategories)
+            // window.removeEventListener(COMMANDS.openProducts, function(evt))
         }
-    },[register])
+    },[register,openLink])
     useEffect(()=>{
         if(alanInstance!=null) return
         setAlanInstance(alanBtn({
@@ -38,9 +51,11 @@ const Alan = () =>{
             right: '50px',
             zIndex:5,
             key: 'd460a2b8d124ba918d6916c9bee052562e956eca572e1d8b807a3e2338fdd0dc/stage',
-            onCommand: ({command}) => {
-               window.dispatchEvent(new CustomEvent(command));
-            console.log(command);
+            onCommand: (commandData) => {
+                console.log(`link ${commandData.link}`);
+                var evt = new CustomEvent(commandData.command, {detail: commandData.link})
+               window.dispatchEvent(evt);
+            
             } 
         })
     )},[])
