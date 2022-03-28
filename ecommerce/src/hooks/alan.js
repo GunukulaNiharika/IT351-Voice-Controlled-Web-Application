@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import alanBtn from '@alan-ai/alan-sdk-web'
 import { useState } from "react";
 import { useCallback } from "react";
@@ -12,6 +13,7 @@ const COMMANDS = {
 
 const Alan = () =>{
     const navigate = useHistory();
+    const category = useSelector((state) => state.category);
     const [alanInstance, setAlanInstance] = useState();
     const register = useCallback(() =>{
         alanInstance.playText("Registering");
@@ -23,11 +25,15 @@ const Alan = () =>{
         navigate.push('/sample');
     },[alanInstance])
     const openLink = useCallback((url) =>{
-        // alanInstance.playText("Fetching MI");
+        // console.log(name.value)
+        // alanInstance.playText(`Fetching ${name.value}`);
         const win = window.open(url, '_top');
         if (win != null) {
           win.focus();
         }
+        // var cat = category.map(m => m.name.includes(name.value))
+        // console.log( cat)
+
         
     },[alanInstance])
 
@@ -52,7 +58,7 @@ const Alan = () =>{
             zIndex:5,
             key: 'd460a2b8d124ba918d6916c9bee052562e956eca572e1d8b807a3e2338fdd0dc/stage',
             onCommand: (commandData) => {
-                console.log(`link ${commandData.link}`);
+                console.log(commandData.link);
                 var evt = new CustomEvent(commandData.command, {detail: commandData.link})
                window.dispatchEvent(evt);
             
