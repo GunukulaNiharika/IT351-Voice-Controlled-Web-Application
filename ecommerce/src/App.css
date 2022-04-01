@@ -23,3 +23,9 @@
 .title{
     text-align: center;
 }
+.sb{
+    justify-content: space-between;
+}
+.flexRow{
+    display: flex;
+}

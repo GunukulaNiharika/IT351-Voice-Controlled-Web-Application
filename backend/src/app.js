@@ -7,10 +7,12 @@ const connectDB=require('../db');
 //Routes
 const authRoutes = require('./Routes/auth');
 const adminRoutes=require('./Routes/admin/auth');
+const addressRoutes = require('./Routes/addressRoutes')
 const categoryRoutes=require('./routes/categoryRoutes');
 const productRoutes=require('./routes/productRoutes');
 const cartRoutes=require('./routes/cartRoutes');
 const pageRoutes=require('./Routes/admin/page'); 
+const orderRoutes  = require('./Routes/orderRoutes');
 const initialDataRoutes=require('./routes/admin/initialData');
 
 const cors=require('cors');
@@ -35,6 +37,8 @@ app.use('/api',productRoutes);
 app.use('/api',cartRoutes);
 app.use('/api',initialDataRoutes);
 app.use('/api', pageRoutes);
+app.use('/api', addressRoutes);
+app.use('/api', orderRoutes)
 
 app.use((req,res)=>{
     res.status(404).json({

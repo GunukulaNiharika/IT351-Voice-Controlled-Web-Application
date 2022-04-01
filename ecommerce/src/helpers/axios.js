@@ -12,10 +12,15 @@ const axiosInstance= axios.create({
     }
 });
 axiosInstance.interceptors.request.use((req)=>{
+    const {auth} = configureStore.getState();
+    if(auth.token){
+        req.headers.Authorization = `${auth.token}`
+    }
     return req;
 })
 
 axiosInstance.interceptors.response.use((res)=>{
+
     return res;
 }, (error) => {
     console.log(error);
