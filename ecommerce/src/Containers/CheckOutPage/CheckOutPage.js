@@ -47,7 +47,7 @@ const Address = ({
   return (
     <div className="flexRow addressContainer">
       <div>
-        <input name="address" onClick={() => selectAddress(adr)} type="radio" />
+        <input name="address" id={adr.name} onClick={() => selectAddress(adr)} type="radio" />
       </div>
       <div className="flexRow sb addressinfo">
         {!adr.edit ? (
@@ -75,6 +75,7 @@ const Address = ({
             {adr.selected && (
               <MaterialButton
                 title="DELIVERY HERE"
+                id="deliverhere"
                 onClick={() => confirmDeliveryAddress(adr)}
                 style={{
                   width: "200px",
@@ -282,6 +283,7 @@ const CheckoutPage = (props) => {
                   <strong>{auth.user.email}</strong>
                 </p>
                 <MaterialButton
+                id = "continue"
                   title="CONTINUE"
                   onClick={userOrderConfirmation}
                   style={{
@@ -306,10 +308,11 @@ const CheckoutPage = (props) => {
                       padding: "20px",
                     }}
                   >
-                    <input type="radio" name="paymentOption" value="cod" />
+                    <input type="radio" id="cash on delivery" name="paymentOption" value="cod" />
                     <div>Cash on delivery</div>
                   </div>
                   <MaterialButton
+                  id = "confirmorder"
                     title="CONFIRM ORDER"
                     onClick={onConfirmOrder}
                     style={{

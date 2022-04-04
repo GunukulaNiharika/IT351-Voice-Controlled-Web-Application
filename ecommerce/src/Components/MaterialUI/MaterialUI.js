@@ -88,6 +88,7 @@ const MaterialButton = (props) => {
       }}
     >
       <button
+        id = {props.id}
         className="materialButton"
         style={{
           backgroundColor: props.bgColor,

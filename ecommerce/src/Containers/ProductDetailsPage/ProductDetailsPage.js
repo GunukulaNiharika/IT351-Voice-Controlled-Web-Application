@@ -59,6 +59,7 @@ const ProductDetailsPage = (props) => {
               <MaterialButton
                 title="ADD TO CART"
                 bgColor="#ff9f00"
+                id="addtocart"
                 textColor="#ffffff"
                 style={{
                   marginRight: "5px",
