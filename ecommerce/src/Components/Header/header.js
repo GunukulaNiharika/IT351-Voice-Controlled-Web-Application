@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-// import flipkartLogo from "../../images/logo/flipkart.png";
+import Logo from "../../images/logo.png"
 // import goldenStar from "../../images/logo/golden-star.png";
 import { IoIosArrowDown, IoIosCart, IoIosSearch } from "react-icons/io";
 import {
@@ -212,11 +212,11 @@ const Header = (props) => {
       <div className="subHeader">
         {/* Logo  */}
         <div className="logo">
-          {/* <a href="">
-            <img src={flipkartLogo} className="logoimage" alt="" />
-          </a> */}
-          <a style={{ marginTop: "-10px" }}>
-            <span className="exploreText">Shopify</span>
+          <a href="">
+            <img src={Logo} className="logoimage" alt="" />
+          </a>
+          <a style={{ marginTop: "-1px" }}>
+            {/* <span className="exploreText">Shopify</span> */}
             {/* <span className="plusText">Plus</span> */}
             {/* <img src={goldenStar} className="goldenStar" alt="" /> */}
           </a>

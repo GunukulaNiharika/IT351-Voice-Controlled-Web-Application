@@ -14,6 +14,7 @@ import CartPage from '../Containers/CartPage/Cart';
 import CheckoutPage from '../Containers/CheckOutPage/CheckOutPage';
 import OrderDetailsPage from '../Containers/OrderDetailsPage/OrderDetailsPage';
 import OrderPage from '../Containers/OrderPage/OrderPage';
+import Capture from './Capture';
 function Main(){
     const dispatch =useDispatch();
     const auth= useSelector(state=> state.auth);
@@ -39,6 +40,7 @@ function Main(){
                 {/* <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register}/> */}
                 <Route path="/cart" component={CartPage}/>
+                <Route path="/capture" component={Capture} />
                 <Route path="/checkout" component={CheckoutPage}/>
                 <Route path="/account/orders" component={OrderPage} />
                 <Route path="/order_details/:orderId" component={OrderDetailsPage} />
