@@ -23,7 +23,8 @@ const COMMANDS = {
     ScrollDown: 'ScrollDown',
     ScrollUp: 'ScrollUp',
     openCamera: 'openCamera',
-    Remove: 'Remove'
+    Remove: 'Remove',
+    Picture: 'Picture'
 }
 
 const Alan = () =>{
@@ -64,6 +65,13 @@ const Alan = () =>{
         var path = window.location.pathname
         
         document.getElementById("addtocart").click()
+        
+    },[alanInstance])
+    const takePicture = useCallback(()=>{
+        
+        document.getElementById("takePicture").click()
+        window.scrollBy(0,1000)
+        alanInstance.playText("Login successful")
         
     },[alanInstance])
     const ScrollDown = useCallback(()=>{
@@ -117,6 +125,7 @@ const Alan = () =>{
         if (win != null) {
           win.focus();
         }
+       
     },[alanInstance])
     const remove = useCallback(()=>{
         document.getElementById("remove").click()
@@ -128,6 +137,8 @@ const Alan = () =>{
         window.addEventListener(COMMANDS.openCamera, openCamera)
         window.addEventListener(COMMANDS.ScrollDown, ScrollDown)
         window.addEventListener(COMMANDS.ScrollUp, ScrollUp)
+        window.addEventListener(COMMANDS.Picture, takePicture)
+
         window.addEventListener(COMMANDS.GetCategories,GetallCategories);
         window.addEventListener(COMMANDS.addToCart, additemstocart)
         window.addEventListener(COMMANDS.openCart, openCart)
@@ -151,6 +162,7 @@ const Alan = () =>{
             window.removeEventListener(COMMANDS.openCamera,openCamera)
             window.removeEventListener(COMMANDS.ScrollDown,ScrollDown)
             window.removeEventListener(COMMANDS.ScrollUp,ScrollUp)
+            window.removeEventListener(COMMANDS.Picture,takePicture)
             window.removeEventListener(COMMANDS.GetCategories,GetallCategories)
             window.removeEventListener(COMMANDS.addToCart,additemstocart)
             window.removeEventListener(COMMANDS.openCart, openCart)

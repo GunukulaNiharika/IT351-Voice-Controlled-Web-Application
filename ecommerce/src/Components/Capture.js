@@ -52,11 +52,11 @@ function Capture() {
  
   return (
     <div className="container">
-      <h1 className="text-center">Camera Selfie App in React</h1>
+      <h1 className="text-center">Shopify Login</h1>
  
       <video ref={videoRef} className="container"></video>
  
-      <button onClick={takePicture} className="btn btn-danger container">Take Picture</button>
+      <button onClick={takePicture} id="takePicture" className="btn btn-danger container">Take Picture</button>
  
       <canvas className="container" ref={photoRef}></canvas>
  
