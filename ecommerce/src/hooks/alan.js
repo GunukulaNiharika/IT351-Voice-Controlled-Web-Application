@@ -21,7 +21,9 @@ const COMMANDS = {
     openOrders: 'openOrders',
     HomePage: 'HomePage',
     ScrollDown: 'ScrollDown',
-    ScrollUp: 'ScrollUp'
+    ScrollUp: 'ScrollUp',
+    openCamera: 'openCamera',
+    Remove: 'Remove'
 }
 
 const Alan = () =>{
@@ -110,10 +112,20 @@ const Alan = () =>{
           win.focus();
         }
     },[alanInstance])
+    const openCamera = useCallback(()=>{
+        const win = window.open("/capture", '_top');
+        if (win != null) {
+          win.focus();
+        }
+    },[alanInstance])
+    const remove = useCallback(()=>{
+        document.getElementById("remove").click()
+    },[alanInstance])
 
     useEffect(()=> {
         window.addEventListener(COMMANDS.REGISTER,register)
         window.addEventListener(COMMANDS.HomePage, HomePage)
+        window.addEventListener(COMMANDS.openCamera, openCamera)
         window.addEventListener(COMMANDS.ScrollDown, ScrollDown)
         window.addEventListener(COMMANDS.ScrollUp, ScrollUp)
         window.addEventListener(COMMANDS.GetCategories,GetallCategories);
@@ -122,6 +134,7 @@ const Alan = () =>{
         window.addEventListener(COMMANDS.placeOrder, placeOrder)
         window.addEventListener(COMMANDS.deliverhere, deliverhere)
         window.addEventListener(COMMANDS.contin, contin)
+        window.addEventListener(COMMANDS.Remove, remove)
         window.addEventListener(COMMANDS.confirmOrder, confirmOrder)
         window.addEventListener(COMMANDS.openOrders, openOrders)
         window.addEventListener(COMMANDS.openproducts,function(evt){
@@ -135,6 +148,7 @@ const Alan = () =>{
         return () =>{
             window.removeEventListener(COMMANDS.REGISTER,register)
             window.removeEventListener(COMMANDS.HomePage,HomePage)
+            window.removeEventListener(COMMANDS.openCamera,openCamera)
             window.removeEventListener(COMMANDS.ScrollDown,ScrollDown)
             window.removeEventListener(COMMANDS.ScrollUp,ScrollUp)
             window.removeEventListener(COMMANDS.GetCategories,GetallCategories)
@@ -143,6 +157,7 @@ const Alan = () =>{
             window.removeEventListener(COMMANDS.placeOrder,placeOrder)
             window.removeEventListener(COMMANDS.deliverhere,deliverhere)
             window.removeEventListener(COMMANDS.contin,contin)
+            window.removeEventListener(COMMANDS.Remove,remove)
             window.removeEventListener(COMMANDS.confirmOrder,confirmOrder)
             window.removeEventListener(COMMANDS.openOrders,openOrders)
             // window.removeEventListener(COMMANDS.openProducts, function(evt))

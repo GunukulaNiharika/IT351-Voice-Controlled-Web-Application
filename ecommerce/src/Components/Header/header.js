@@ -47,6 +47,12 @@ const Header = (props) => {
 
     dispatch(_signup(user));
   };
+  const capture = () =>{
+    const win = window.open("/capture", '_top');
+    if (win != null) {
+      win.focus();
+    }
+  }
 
   const userLogin = () => {
     if (signup) {
@@ -197,12 +203,13 @@ const Header = (props) => {
                 />
                 <p style={{ textAlign: "center" }}>OR</p>
                 <MaterialButton
-                  title="Request OTP"
+                  title="Open Camera"
                   bgColor="#ffffff"
                   textColor="#2874f0"
                   style={{
                     margin: "20px 0",
                   }}
+                  onClick={capture}
                 />
               </div>
             </div>
