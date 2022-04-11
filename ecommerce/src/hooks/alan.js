@@ -19,7 +19,9 @@ const COMMANDS = {
     contin: 'continue',
     confirmOrder: 'confirmOrder',
     openOrders: 'openOrders',
-    HomePage: 'HomePage'
+    HomePage: 'HomePage',
+    ScrollDown: 'ScrollDown',
+    ScrollUp: 'ScrollUp'
 }
 
 const Alan = () =>{
@@ -62,6 +64,12 @@ const Alan = () =>{
         document.getElementById("addtocart").click()
         
     },[alanInstance])
+    const ScrollDown = useCallback(()=>{
+        window.scrollBy(0,300)
+    }, [alanInstance])
+    const ScrollUp = useCallback(()=>{
+        window.scrollBy(0,-300)
+    }, [alanInstance])
 
     const HomePage = useCallback(()=>{
         const win = window.open("/", '_top');
@@ -106,6 +114,8 @@ const Alan = () =>{
     useEffect(()=> {
         window.addEventListener(COMMANDS.REGISTER,register)
         window.addEventListener(COMMANDS.HomePage, HomePage)
+        window.addEventListener(COMMANDS.ScrollDown, ScrollDown)
+        window.addEventListener(COMMANDS.ScrollUp, ScrollUp)
         window.addEventListener(COMMANDS.GetCategories,GetallCategories);
         window.addEventListener(COMMANDS.addToCart, additemstocart)
         window.addEventListener(COMMANDS.openCart, openCart)
@@ -125,6 +135,8 @@ const Alan = () =>{
         return () =>{
             window.removeEventListener(COMMANDS.REGISTER,register)
             window.removeEventListener(COMMANDS.HomePage,HomePage)
+            window.removeEventListener(COMMANDS.ScrollDown,ScrollDown)
+            window.removeEventListener(COMMANDS.ScrollUp,ScrollUp)
             window.removeEventListener(COMMANDS.GetCategories,GetallCategories)
             window.removeEventListener(COMMANDS.addToCart,additemstocart)
             window.removeEventListener(COMMANDS.openCart, openCart)
